@@ -43,7 +43,7 @@ to setup-agents
     ;;escolher um dos dois 'friendly' ou 'loner'
     ;;friendly mice -> ratos que tentam andar em grupos
     ;;loner mice -> ratos que evitam grupos
-    set tipo one-of ["friendly" "loner"]
+    set tipo one-of ["friendly"]
   ]
 
   create-cats N-cats
@@ -507,7 +507,7 @@ N-mice
 N-mice
 0
 10
-5
+10
 1
 1
 NIL
@@ -522,7 +522,7 @@ N-cats
 N-cats
 0
 5
-2
+5
 1
 1
 NIL
@@ -546,10 +546,10 @@ NIL
 1
 
 MONITOR
-453
-327
-510
-372
+445
+362
+502
+407
 NIL
 ticks
 17
@@ -605,7 +605,7 @@ percent-cheese
 percent-cheese
 0
 10
-10
+2
 1
 1
 NIL
@@ -631,7 +631,7 @@ percent-traps
 percent-traps
 0
 10
-2
+0
 1
 1
 NIL
@@ -649,15 +649,15 @@ count patches with [pcolor = red]
 13
 
 SLIDER
-399
-145
-571
-178
+380
+284
+552
+317
 init-energia
 init-energia
 0
 150
-100
+0
 1
 1
 NIL
@@ -665,19 +665,19 @@ HORIZONTAL
 
 CHOOSER
 37
-638
+657
 281
-683
+702
 experiencia
 experiencia
 "Original" "Caça-Fuga" "Caça-Fuga and Cheese-Traps"
-2
+0
 
 SLIDER
-38
-686
-210
-719
+39
+705
+211
+738
 numero-exp
 numero-exp
 1
@@ -689,20 +689,20 @@ NIL
 HORIZONTAL
 
 TEXTBOX
-40
-609
-190
-643
+36
+614
+186
+648
 Output das Experiências
 14
 0.0
 1
 
 SWITCH
-217
-686
-367
-719
+218
+705
+368
+738
 primeiro-teste
 primeiro-teste
 0
@@ -725,20 +725,20 @@ NIL
 HORIZONTAL
 
 SWITCH
-20
+19
 406
-190
+189
 439
 Poisoned-Cheese
 Poisoned-Cheese
-0
+1
 1
 -1000
 
 MONITOR
-195
+194
 398
-276
+275
 451
 Poison left
 count patches with [pcolor = orange]
@@ -747,9 +747,9 @@ count patches with [pcolor = orange]
 13
 
 SWITCH
-13
+12
 519
-190
+189
 552
 Breeding-Allowed
 Breeding-Allowed
@@ -758,9 +758,9 @@ Breeding-Allowed
 -1000
 
 MONITOR
-196
+195
 480
-296
+295
 533
 Cats hatched
 filhos-cats
@@ -769,15 +769,35 @@ filhos-cats
 13
 
 MONITOR
-196
+195
 536
-296
+295
 589
 Mice hatched
 filhos-mice
 17
 1
 13
+
+TEXTBOX
+224
+186
+374
+204
+Opções das Experiências
+13
+0.0
+1
+
+TEXTBOX
+408
+18
+558
+36
+Variáveis Básicas
+13
+0.0
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
