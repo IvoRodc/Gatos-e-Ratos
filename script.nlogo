@@ -93,7 +93,7 @@ to go
   lunch-time
   starvation
   if Breeding-Allowed = true [reproduce]
-  if count patches with [pcolor = yellow OR pcolor = orange] < (26 * 26) * 0.1 / 3 [setup-cheese]
+  if count patches with [pcolor = yellow OR pcolor = orange] < (26 * 26) * (percent-cheese / 100 ) / 3 [setup-cheese] ;;repor queijo assim que este chegue a 1/3 da quantidade original
 
   tick
   if count mice = 0 OR ticks = it-max [export-final set numero-exp numero-exp + 1 stop] ;;terminar a exportação dos dados
@@ -387,9 +387,9 @@ to print-header
       print-lb ";"
       print-nlb "EXPERIENCIA" print-nlb ";" print-nlb experiencia print-nlb ";" print-nlb ";" print-nlb ";" print-nlb "OBJECTIVO" print-nlb ";" print-nlb it-max print-nlb " Iteraçoes" print-lb ";"
       print-lb ";"
-      print-nlb ";" print-nlb ";" print-nlb "Exp 1;;" print-nlb "Exp 2;;" print-nlb "Exp 3;;" print-nlb "Exp 4;;" print-nlb "Exp 5;;" print-nlb "Exp 6;;" print-nlb "Exp 7;;" print-nlb "Exp 8;;" print-nlb "Exp 9;;" print-nlb "Exp 10;;"
+      print-nlb ";" print-nlb ";" print-nlb "Exp 1;;;" print-nlb "Exp 2;;;" print-nlb "Exp 3;;;" print-nlb "Exp 4;;;" print-nlb "Exp 5;;;" print-nlb "Exp 6;;;" print-nlb "Exp 7;;;" print-nlb "Exp 8;;;" print-nlb "Exp 9;;;" print-nlb "Exp 10;;;"
       print-lb ";"
-      print-nlb "Numero de Cats" print-nlb ";" print-nlb "Numero de Mice" print-nlb ";" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;"
+      print-nlb "Numero de Cats" print-nlb ";" print-nlb "Numero de Mice" print-nlb ";" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;"
       print-lb ""
     ]
   ]
@@ -400,9 +400,9 @@ to print-header
       print-lb ";" print-lb ";" print-lb ";"
       print-nlb "EXPERIENCIA" print-nlb ";" print-nlb experiencia print-nlb ";" print-nlb ";" print-nlb ";" print-nlb "OBJECTIVO" print-nlb ";" print-nlb it-max print-nlb " Iteraçoes" print-lb ";"
       print-lb ";"
-      print-nlb ";" print-nlb ";" print-nlb "Exp 1;;" print-nlb "Exp 2;;" print-nlb "Exp 3;;" print-nlb "Exp 4;;" print-nlb "Exp 5;;" print-nlb "Exp 6;;" print-nlb "Exp 7;;" print-nlb "Exp 8;;" print-nlb "Exp 9;;" print-nlb "Exp 10;;"
+      print-nlb ";" print-nlb ";" print-nlb "Exp 1;;;" print-nlb "Exp 2;;;" print-nlb "Exp 3;;;" print-nlb "Exp 4;;;" print-nlb "Exp 5;;;" print-nlb "Exp 6;;;" print-nlb "Exp 7;;;" print-nlb "Exp 8;;;" print-nlb "Exp 9;;;" print-nlb "Exp 10;;;"
       print-lb ";"
-      print-nlb "Numero de Cats" print-nlb ";" print-nlb "Numero de Mice" print-nlb ";" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;"
+      print-nlb "Numero de Cats" print-nlb ";" print-nlb "Numero de Mice" print-nlb ";" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;"
       print-lb ""
     ]
   ]
@@ -413,9 +413,9 @@ to print-header
       print-lb ";" print-lb ";" print-lb ";"
       print-nlb "EXPERIENCIA" print-nlb ";" print-nlb experiencia print-nlb ";" print-nlb ";" print-nlb ";" print-nlb "OBJECTIVO" print-nlb ";" print-nlb it-max print-nlb " Iteraçoes" print-lb ";"
       ifelse Poisoned-Cheese = true [print-nlb ";" print-lb "Poisoned Cheese (10%);"] [print-lb ";"]
-      print-nlb ";" print-nlb ";;;;" print-nlb "Exp 1;;" print-nlb "Exp 2;;" print-nlb "Exp 3;;" print-nlb "Exp 4;;" print-nlb "Exp 5;;" print-nlb "Exp 6;;" print-nlb "Exp 7;;" print-nlb "Exp 8;;" print-nlb "Exp 9;;" print-nlb "Exp 10;;"
+      print-nlb ";" print-nlb ";;;;" print-nlb "Exp 1;;;" print-nlb "Exp 2;;;" print-nlb "Exp 3;;;" print-nlb "Exp 4;;;" print-nlb "Exp 5;;;" print-nlb "Exp 6;;;" print-nlb "Exp 7;;;" print-nlb "Exp 8;;;" print-nlb "Exp 9;;;" print-nlb "Exp 10;;;"
       print-lb ";"
-      print-nlb "Energia Inicial;" print-nlb "Numero de Cats" print-nlb ";" print-nlb "Numero de Mice" print-nlb ";" print-nlb "Cheese;" print-nlb "Traps;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;" print-nlb "Ticks; Mice;"
+      print-nlb "Energia Inicial;" print-nlb "Numero de Cats" print-nlb ";" print-nlb "Numero de Mice" print-nlb ";" print-nlb "Cheese;" print-nlb "Traps;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;" print-nlb "Ticks;Mice;Cats;"
       print-lb ""
     ]
   ]
@@ -431,10 +431,10 @@ to export-final
   [
     ifelse numero-exp = 1
     [;;THEN
-      print-nlb N-cats print-nlb ";" print-nlb N-mice print-nlb ";" print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";"
+      print-nlb N-cats print-nlb ";" print-nlb N-mice print-nlb ";" print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";" print-nlb (count cats) print-nlb ";"
     ]
     [;;ELSE
-      print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";"
+      print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";" print-nlb (count cats) print-nlb ";"
     ]
     if numero-exp = 10 [print-lb ""]
     fclose
@@ -442,10 +442,10 @@ to export-final
   [;;ELSE
     ifelse numero-exp = 1
     [;;THEN
-      print-nlb init-energia print-nlb ";" print-nlb N-cats print-nlb ";" print-nlb N-mice print-nlb ";" print-nlb percent-cheese print-nlb "%;" print-nlb percent-traps print-nlb "%;" print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";"
+      print-nlb init-energia print-nlb ";" print-nlb N-cats print-nlb ";" print-nlb N-mice print-nlb ";" print-nlb percent-cheese print-nlb "%;" print-nlb percent-traps print-nlb "%;" print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";" print-nlb (count cats) print-nlb ";"
     ]
     [;;ELSE
-      print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";"
+      print-nlb ticks print-nlb ";" print-nlb (count mice) print-nlb ";" print-nlb (count cats) print-nlb ";"
     ]
     if numero-exp = 10 [print-lb ""]
     fclose
@@ -459,10 +459,10 @@ end
 
 to reproduce
   ask mice[
+    let x one-of [1 2 3 4]
    if energia > 200 [
-    set energia energia / 2
+    set energia energia / (x + 1) ;;divide pela quantidade de ratos que nasceram com a adição do pai
     if random 100 < 15 [
-      let x one-of [1 2 3 4]
       hatch x
       set filhos-mice filhos-mice + x
     ]
@@ -470,10 +470,10 @@ to reproduce
   ]
 
   ask cats[
+    let y one-of [1 2]
     if energia > 250 [
-     set energia energia / 2
+     set energia energia / (y + 1) ;;divide pela quantidade de ratos que nasceram com a adição do pai
      if random 100 < 5[
-      let y one-of [1 2]
       hatch y
       set filhos-cats filhos-cats + y
      ]
@@ -502,8 +502,8 @@ GRAPHICS-WINDOW
 13
 -13
 13
-1
-1
+0
+0
 1
 ticks
 30.0
@@ -633,7 +633,7 @@ percent-cheese
 percent-cheese
 0
 10
-10
+5
 1
 1
 NIL
@@ -659,7 +659,7 @@ percent-traps
 percent-traps
 0
 10
-2
+5
 1
 1
 NIL
@@ -677,10 +677,10 @@ count patches with [pcolor = red]
 13
 
 SLIDER
-399
-145
-571
-178
+403
+267
+575
+300
 init-energia
 init-energia
 0
@@ -710,7 +710,7 @@ numero-exp
 numero-exp
 1
 10
-3
+1
 1
 1
 NIL
@@ -733,7 +733,7 @@ SWITCH
 719
 primeiro-teste
 primeiro-teste
-0
+1
 1
 -1000
 
@@ -759,7 +759,7 @@ SWITCH
 439
 Poisoned-Cheese
 Poisoned-Cheese
-1
+0
 1
 -1000
 
@@ -828,6 +828,26 @@ count mice with [tipo = \"friendly\"]
 17
 1
 11
+
+TEXTBOX
+217
+190
+367
+208
+Opções das Experiências
+13
+0.0
+1
+
+TEXTBOX
+347
+24
+497
+42
+Variáveis Básicas
+13
+0.0
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -1212,7 +1232,7 @@ Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 
 @#$#@#$#@
-NetLogo 5.2.1
+NetLogo 5.2.0
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
